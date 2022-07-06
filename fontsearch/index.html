@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Better Font Search</title>
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href=" css/reset.css">
+	<link rel="stylesheet" type="text/css" href=" css/skeleton.css">
+	<link rel="stylesheet" type="text/css" href=" css/main.css">
+	
+	<!-- CSS dependencies -->
+	<link rel="stylesheet" type="text/css" href=" css/slider/nouislider.css">
+
+	<!-- Site Font -->
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+	<!-- Mega gfonts quey -->
+	<link id="gfonts" href="https://fonts.googleapis.com/css?family=Assistant|Open+Sans|Roboto|Slabo+27px|Trirong|Lato|Hind+Madurai|Oswald|Roboto+Condensed|Source+Sans+Pro|Montserrat|Raleway|El+Messiri|PT+Sans|Open+Sans+Condensed|Lora|Roboto+Slab|Prompt|Taviraj|Droid+Sans|Ubuntu|Hind+Guntur|Droid+Serif|Arimo|Merriweather|Libre+Franklin|PT+Sans+Narrow|Nato+Sans|Arima+Madurai|Fjalla+One|PT+Serif|Titillium+Web|Aref+Ruqaa|Playfair+Display|Cormorant+Garamond|Cormorant|Cormorant+Infant" rel="stylesheet">
+	<style type="text/css" id="fontStyles">
+		
+	</style>
+
+
+</head>
+<body>
+	<div class='error'><span class='dismiss'><i class="fa fa-times" aria-hidden="true"></i></span>Compare tray is full.</div>
+
+<aside class="menu">
+
+	<form action="">
+	<section class="compare">
+		<h2>Compare fonts</h2>
+		<button>Compare</button>
+		<div class="compareTray">
+			<div class="compareItems">
+			</div>
+		</div>
+		<div class="clear"></div>
+	</section> <!-- compare -->
+
+	<section class="global">
+		<h2>Global Filters</h2>
+	
+
+		<div class="xHeight">
+			<input type="checkbox" id="xHeight">
+			<label for="xHeight">x-height</label>
+			<div id="sliderX" class="slider"></div>
+		</div>
+		<div class="StrokeThickness">
+			<input type="checkbox" id="StrokeThickness">
+			<label for="StrokeThickness">Stroke thickness</label>
+			<div id="sliderT" class="slider"></div>
+		</div>
+		<div class="StrokeContrast">
+			<input type="checkbox" id="StrokeContrast">
+			<label for="StrokeContrast">Stroke contrast</label>
+			<div id="sliderC" class="slider"></div>
+		</div>
+		<div class="LetterWidth">
+			<input type="checkbox" id="LetterWidth">
+			<label for="LetterWidth">Letter width</label>
+			<div id="sliderW" class="slider"></div>
+		</div>
+		<div class="StressAxe">
+			<input type="checkbox" id="StressAxe">
+			<label for="StressAxe">Stress Axe</label>
+			<div id="sliderS" class="slider"></div>
+		</div>
+	</section><!-- global -->
+
+
+	<section class="serif">
+		<h2>Serif Filters</h2>
+
+		<div class="serifStyle left">
+			<span class="serifFonts">
+				<input type="radio" id="serifFonts" name="serifStyle">
+				<label for="serifFonts">
+					<img src="img/serifLight.svg" alt="serif fonts">
+					Serif
+				</label>
+			</span>
+			<span class="sansFonts">
+				<input type="radio" id="sansFonts" name="serifStyle">
+				<label for="sansFonts">
+					<img src="img/sansLight.svg" alt="sans serif fonts">
+					Sans
+				</label>	
+			</span>
+
+			<span class="slabFonts">
+				<input type="radio" id="slabFonts" name="serifStyle">
+				<label for="slabFonts">
+					<img src="img/slabLight.svg" alt="slab serif fonts">
+					Slab
+				</label>			
+			</span>
+
+		</div><!-- serifStyle left -->
+
+		<div class="bracketSize right">
+			<span class="largeBrackets">
+				<input type="radio" id="largeBrackets" name="bracketSize">
+				<label for="largeBrackets">
+					<img src="img/largeLight.svg" alt="large brackets">
+					Large
+				</label>
+			</span>
+					
+			<span class="smallBrackets">
+				<input type="radio" id="smallBrackets" name="bracketSize">
+				<label for="smallBrackets">
+					<img src="img/smallLight.svg" alt="small brackets">
+					Small
+				</label>
+			</span>
+
+		</div><!-- bracketSize right -->
+
+		<div class="serifSymm left">
+
+			<span class="symm">
+				<input type="radio" id="symm" name="serifSymm">
+				<label for="symm">
+					<img src="img/symmLight.svg" alt="symmetric serifs">
+					Sym
+				</label>
+			</span>
+
+			<span class="asymm">
+				<input type="radio" id="asymm" name="serifSymm">
+				<label for="asymm">
+					<img src="img/asymmLight.svg" alt="asymmetric serifs">
+					Asym
+				</label>
+			</span>
+
+		</div><!-- serifSymm left -->
+
+		<div class="serifCurve right">
+
+			<span class="curve">
+				<input type="radio" id="curve" name="serifCurve">
+				<label for="curve">
+					<img src="img/curveLight.svg" alt="">
+					Curve
+				</label>
+			</span>
+
+			<span class="flat">
+				<input type="radio" id="flat" name="serifCurve">
+				<label for="flat">
+				<img src="img/flatLight.svg" alt="">
+				Flat
+				</label>
+			</span>
+
+
+		</div><!-- serifCurve right -->
+	</section><!-- serif -->
+
+	<section class="search clear">
+		<h2>Search fonts</h2>
+		<input type="search" name="search" placeholder="search fonts">
+	</section> <!-- search -->
+
+	</form>
+
+	<footer>
+		<ul>
+			<li><a href="#">Contact</a></li>
+			<li><a href="#">Github</a></li>
+			<li><a href="#">About</a></li>
+		</ul>
+	</footer>
+	
+</aside>
+
+<main>
+	<ul class="fontList">
+		<li class="OpenSans">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Open Sans</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="Trirong">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Trirong</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="Assistant">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Assistant</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="Roboto">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Roboto</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="Lato">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Lato</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="HindMadurai">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Hind Madurai</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="Oswald">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Oswald</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="RobotoCondensed">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Roboto Condensed</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="SourceSansPro">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Source Sans Pro</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="Montserrat">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Montserrat</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="Raleway">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Raleway</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="ElMessiri">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">El Messiri</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="PTSans">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">PT Sans</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="OpenSansCondensed">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Open Sans Condensed</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="Lora">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Lora</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="Prompt">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Prompt</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="Taviraj">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Taviraj</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="RobotoSlab">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Roboto Slab</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="DroidSans">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Droid Sans</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="Ubuntu">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Ubuntu</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="HindFranklin">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Hind Franklin</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="Merriweather">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Merriweather</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="PTSansNarrow">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">PT Sans Narrow</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="ArimaMadurai">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Arima Madurai</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="NotoSans">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Noto Sans</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="FjallaOne">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Fjalla One</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="PTSerif">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">PT Serif</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="Titillium">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Titillium</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="CormorantGaramond">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Cormorant Garamond</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="Cormorant">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Cormorant</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="CarmorantInfant">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Carmorant Infant</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="ArefRuqaa">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Aref Ruqaa</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="PlayfairDisplay">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Playfair Display</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="WorkSans">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Work Sans</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+		<li class="Muli">
+			<button class="addToCompare"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<h4 class="fontName">Muli</h4>
+			<h5 class="smallShowcase">The quick brown fox jumps over the lazy dog</h5>
+		</li>
+	</ul>
+</main>
+
+</div>
+
+	
+</body>
+</html>
+
+
+
+<!-- JS dependencies -->
+<script type="text/javascript" src="script/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="script/nouislider.min.js"></script>
+
+<!--JS -->
+<script type="text/javascript" src="script/main.js"></script>
+
+
